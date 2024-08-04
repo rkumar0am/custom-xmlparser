@@ -12,23 +12,19 @@ public class AppHeader implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private String crtdInfo;
-	private String debtInfo;
-
-	public String getCrtdInfo() {
+	private CreditInfo crtdInfo;
+	private DebitInfo debtInfo;
+	public CreditInfo getCrtdInfo() {
 		return crtdInfo;
 	}
-
-	public void setCrtdInfo(String crtdInfo) {
+	public void setCrtdInfo(CreditInfo crtdInfo) {
 		this.crtdInfo = crtdInfo;
 	}
-
-	public String getDebtInfo() {
+	public DebitInfo getDebtInfo() {
 		return debtInfo;
 	}
-
-	public void setDebtInfo(String debtInfo) {
+	public void setDebtInfo(DebitInfo debtInfo) {
 		this.debtInfo = debtInfo;
 	}
-
+	
 }

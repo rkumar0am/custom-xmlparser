@@ -17,8 +17,8 @@ public class CustomXmlparserApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CustomXmlparserApplication.class, args);
 
-		String xmlString = "<Envelope>" + "    <AppHeader>" + "        <crtdInfo>CIRCT001XXX</crtdInfo>"
-				+ "        <debtInfo>CIRCT001ISF</debtInfo>" + "    </AppHeader>" + "    <Document>"
+		String xmlString = "<Envelope>" + "    <AppHeader>" + "        <crtdInfo><id>CIRCT001XXX</id></crtdInfo>"
+				+ "        <debtInfo> <id>CIRCT001ISF</id></debtInfo>" + "    </AppHeader>" + "    <Document>"
 				+ " 	 	<infoLocation>India</infoLocation>" + "    	<firstName>Ramkumar</firstName>"
 				+ "    </Document>" + "</Envelope>";
 
@@ -42,7 +42,7 @@ public class CustomXmlparserApplication {
 			StringReader reader = new StringReader(appHeaderString);
 			AppHeader appHeader = (AppHeader) jaxbUnmarshaller.unmarshal(reader);
 			
-			System.out.println("CreditInfo: " + appHeader.getCrtdInfo() + ", DebitInfo: " + appHeader.getDebtInfo());
+			System.out.println("CreditInfo: " + appHeader.getCrtdInfo().getId() + ", DebitInfo: " + appHeader.getDebtInfo().getId());
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}
